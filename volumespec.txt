@@ -1,0 +1,14 @@
+? Do you still want to use the volumes feature? Yes
+Some regions require a paid plan (bom, fra, maa).
+See https://fly.io/plans to set up a plan.
+
+? Select region: Miami, Florida (US) (mia)
+                  ID: vol_nv8lwpp7xzqgew54
+                Name: mongo_volume
+                 App: jfk-fe-mongodb
+              Region: mia
+                Zone: b14d
+             Size GB: 1
+           Encrypted: true
+          Created at: 02 Nov 23 03:23 UTC
+  Snapshot retention: 5
