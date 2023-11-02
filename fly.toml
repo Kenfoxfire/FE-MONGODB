@@ -20,6 +20,11 @@ primary_region = "mia"
 # Configuración de la imagen Docker y el comando de inicio
 [experimental]
 private_network = true
+cmd = ["mongod", "--ipv6"]
 
 [processes]
 db = "docker-entrypoint.sh mongod"
+
+[mounts]
+  destination = "/data/db"
+  source = "mongo_volume"
