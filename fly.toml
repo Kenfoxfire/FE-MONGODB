@@ -8,17 +8,14 @@ primary_region = "mia"
   MONGO_INITDB_ROOT_PASSWORD = "rH5;v*7(89^1]£(8c"
 
 # Configuración de los servicios y puertos
-[[services]]
+[http_service]
+  http_checks = []
   internal_port = 27017
-  protocol = "tcp"
-
-[services.concurrency]
-  hard_limit = 2
-  soft_limit = 1
-
-[[services.ports]]
-  handlers = ["tcp"]
-  port = "10000"
+  force_https = true
+  auto_stop_machines = true
+  auto_start_machines = true
+  min_machines_running = 0
+  processes = ["app"]
 
 # Configuración de la imagen Docker y el comando de inicio
 [experimental]
