@@ -1,0 +1,27 @@
+# Configuración de la aplicación en Fly.io
+app = "jfk-fe-mongodb"
+
+# Configuración del entorno
+[env]
+MONGO_INITDB_ROOT_USERNAME = "admin"
+MONGO_INITDB_ROOT_PASSWORD = "admin"
+
+# Configuración de los servicios y puertos
+[[services]]
+internal_port = 27017
+protocol = "tcp"
+
+[services.concurrency]
+hard_limit = 2
+soft_limit = 1
+
+[[services.ports]]
+handlers = ["tcp"]
+port = "10000"
+
+# Configuración de la imagen Docker y el comando de inicio
+[experimental]
+private_network = true
+
+[processes]
+db = "docker-entrypoint.sh mongod"
